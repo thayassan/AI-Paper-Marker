@@ -124,7 +124,7 @@
   }
 
   .nav-menu.active {
-    max-height: 300px;
+    max-height: 500px; /* Increased to accommodate all menu items (History was previously hidden) */
   }
 
   .nav-item {
