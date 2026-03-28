@@ -1,0 +1,10 @@
+[build]
+  base = "frontend"
+  publish = "build"
+  command = "npm run build"
+
+# Redirect for React Router to handle SPAs
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
