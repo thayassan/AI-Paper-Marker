@@ -25,7 +25,7 @@ RUN apt-get clean && \
 WORKDIR /app
 
 # Copy requirements first for better caching
-COPY requirements.txt .
+COPY backend/requirements.txt .
 
 # Install Python dependencies with CPU-only torch
 RUN pip install --upgrade pip && \
@@ -37,9 +37,9 @@ RUN pip install --upgrade pip && \
     rm -rf /root/.cache/pip
 
 # Copy application code (excluding unnecessary files)
-COPY app.py config.py Procfile ./
-COPY models/ ./models/
-COPY utils/ ./utils/
+COPY backend/app.py backend/config.py backend/Procfile ./
+COPY backend/models/ ./models/
+COPY backend/utils/ ./utils/
 
 # Create uploads directory
 RUN mkdir -p uploads
