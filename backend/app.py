@@ -3,11 +3,10 @@ from flask_cors import CORS
 from config import Config
 from utils.pdf_processor import PDFProcessor
 from utils.gemini_service import GeminiService
-from utils.db_connection import db, db_connection
+from utils.db_connection import db_connection
 from models.teacher import Teacher
 from models.student import Student
 from models.evaluation import Evaluation
-from bson import ObjectId
 import os
 import logging
 
@@ -20,7 +19,8 @@ app = Flask(__name__)
 cors_origins = [
     'http://localhost:3000',  # Local development
     'http://localhost:5000',
-    os.getenv('FRONTEND_URL', 'http://localhost:3000')  # Production Vercel URL
+    'https://aipapermarker.netlify.app', # Production Netlify URL
+    os.getenv('FRONTEND_URL', 'http://localhost:3000')  # Optional variable
 ]
 CORS(app, origins=cors_origins)
 
