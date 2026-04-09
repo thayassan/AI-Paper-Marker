@@ -306,6 +306,5 @@ This project is licensed under the MIT License.
 
 ---
 
-Made with ❤️ by the CodeWizards🧙‍♂️ Team
 
 
